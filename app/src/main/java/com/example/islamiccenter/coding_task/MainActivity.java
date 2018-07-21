@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         product_list= (GridView) findViewById(R.id.gridview);
 
         String url="https://grapesnberries.getsandbox.com/products?count=10&from=1";
-        Log.d("zamel", url);
+        Log.d("hesham", url);
 
 
 
@@ -63,56 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//    private void executeWebService(/*String url*/) {
-//
-//
-//        // Instantiate the RequestQueue.
-//        RequestQueue queue = Volley.newRequestQueue(this);
-//
-//
-//
-//// Request a string response from the provided URL.
-//        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//
-//                        try {
-//                            JSONObject jsonObject = new JSONObject(response);
-//                            JSONArray jsonArray = jsonObject.getJSONArray("results");
-//
-//
-//                            ProductData = gson.fromJson(jsonArray.toString(), ProductData[].class);
-//                            //  Toast.makeText(MainActivity.this, movieDataModels[0].getOverview(), Toast.LENGTH_SHORT).show();
-//
-//                            adapter = new product_adapter( MainActivity.this , ProductData);
-//                            product_list.setAdapter(adapter);
-//                            product_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                                @Override
-//                                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                                     Toast.makeText(MainActivity.this, "product", Toast.LENGTH_SHORT).show();
-//
-//                                }
-//                            });
-//
-//
-//                        } catch (JsonIOException e) {
-//                            e.printStackTrace();
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//
-//
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Toast.makeText(MainActivity.this, "error", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//// Add the request to the RequestQueue.
-//        queue.add(stringRequest);
-//    }
+
 
          class get_products extends AsyncTask<String , Void ,ProductData[]>
     {
@@ -143,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 JSONArray jsonArray = jsonObject.getJSONArray(null);
 
                 ProductData = gson.fromJson(jsonArray.toString(), ProductData[].class);
-                Log.d("zamel", "doInBackground: "+ ProductData.length);
+                Log.d("hesham", "doInBackground: "+ ProductData.length);
                 return ProductData;
 
             }
